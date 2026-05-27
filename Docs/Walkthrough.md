@@ -30,6 +30,16 @@ To preserve instructions for setting up the local environment, generated `.env.e
 - Configured the default branch to `main`.
 - Prepared the repository for staging files.
 
+### 🔍 5. Deep Directory Security Audit
+To ensure absolute security at all levels:
+- Scanned recursively across all directories to locate any hidden `.env` or configuration variants (`.env.local`, `.env.development`, etc.). Only the two pre-configured server `.env` files exist.
+- Verified that all OS-specific junk files (such as `.DS_Store`) are ignored recursively.
+- Audited the Git index using `git status --ignored` to guarantee that:
+  - **No `node_modules` folders** (neither at root, SimpleCRUD, nor HealthcareApp client/server sub-folders) are tracked.
+  - **No secret `.env` files** are staged.
+  - Only clean, safe source files and safe `.env.example` templates are tracked.
+- Checked for any private keys, certificates, or SSH keys (`.pem`, `.key`, `.pub`) recursively and confirmed the repository is 100% free of hardcoded credentials.
+
 ---
 
 ## 📅 Progress Tracker
@@ -41,6 +51,7 @@ To preserve instructions for setting up the local environment, generated `.env.e
 - [x] Draft initial Walkthrough documentation in `Docs/Walkthrough.md`
 - [x] Staged files for git, ensuring no `.env` or `node_modules` are added
 - [x] Perform first git commit
+- [x] Perform deep folder audit at all levels to verify zero leaks and clean index
 - [x] Provide final remote configuration instructions to user
 
 ---
