@@ -39,7 +39,29 @@ To preserve instructions for setting up the local environment, generated `.env.e
 - [x] Create root `.gitignore` to protect dependencies and env configuration
 - [x] Create `.env.example` templates for SimpleCRUD & HealthcareApp server folders
 - [x] Draft initial Walkthrough documentation in `Docs/Walkthrough.md`
-- [/] Staged files for git, ensuring no `.env` or `node_modules` are added
-- [ ] Perform first git commit
-- [ ] Provide final remote configuration instructions to user
+- [x] Staged files for git, ensuring no `.env` or `node_modules` are added
+- [x] Perform first git commit
+- [x] Provide final remote configuration instructions to user
+
+---
+
+## 🚀 How to Push to GitHub
+
+To push this pre-configured local repository to your GitHub account:
+
+1. **Create a new repository on GitHub:**
+   - Go to [github.com/new](https://github.com/new).
+   - Enter a name for your repository (e.g., `05_CRUD`).
+   - Leave "Add a README file", "Add .gitignore", and "Choose a license" **UNCHECKED** (since we have already set up these files).
+   - Click **Create repository**.
+
+2. **Run the following commands in your terminal in this workspace root directory (`/Users/rishi/Developer/js/JavaScript/Projects/05_CRUD`):**
+   ```bash
+   # Add your GitHub repository link as the remote origin
+   git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
+
+   # Push your code to GitHub
+   git push -u origin main
+   ```
+
 
