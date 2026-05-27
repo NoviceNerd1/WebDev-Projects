@@ -14,11 +14,13 @@ This repository is a structured JavaScript workspace containing multiple CRUD ap
 - Found that no Git repository had been initialized and no `.gitignore` file existed in the root.
 
 ### 🛡️ 2. Comprehensive Git Ignore Filtering
-Created a root-level `.gitignore` file targeting:
-- **Dependency Directories:** Excludes `node_modules/` across all projects to keep the repository slim.
-- **Sensitive Secrets:** Excludes all `.env*` files to avoid exposing access secrets.
-- **Build Output Folders:** Excludes `dist/`, `build/`, `out/`, etc.
-- **System and Log Files:** Filters OS-specific files (`.DS_Store`, custom thumbs) and debug logs.
+Created ignore filters at both the root level and the server levels for redundant local protection:
+- **Root `.gitignore`**: Provides comprehensive coverage across the entire project (automatically ignores all subfolders matching ignore rules recursively).
+- **Server-level `.gitignore` files** ([SimpleCRUD Server](file:///Users/rishi/Developer/js/JavaScript/Projects/05_CRUD/01_Basic/01_SimpleCRUD/server/.gitignore) and [HealthcareApp Server](file:///Users/rishi/Developer/js/JavaScript/Projects/05_CRUD/01_Basic/02_HealthcareApp/server/.gitignore)): Provide local, folder-level safety for the backends.
+- All ignore files screen out:
+  - **Dependency Directories:** Excludes `node_modules/` to keep the repository slim.
+  - **Sensitive Secrets:** Excludes all `.env*` files to avoid exposing local secrets/keys.
+  - **System and Log Files:** Filters OS-specific files (`.DS_Store`) and logs.
 
 ### 🔑 3. Safe Configuration Templates
 To preserve instructions for setting up the local environment, generated `.env.example` templates for both applications:
