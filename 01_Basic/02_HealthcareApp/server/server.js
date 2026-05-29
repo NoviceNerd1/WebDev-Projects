@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const patientRoutes = require("./routes/patientRoutes");
+const authRoutes = require("./routes/authRoutes");
+const auditRoutes = require("./routes/auditRoutes");
 
 require("dotenv").config();
 
@@ -19,6 +21,8 @@ mongoose
 
 // Routes
 app.use("/api/patients", patientRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/audit", auditRoutes);
 
 // Basic Test routes
 app.get("/", (req, res) => {
